@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Orbitron", sans-serif;
+      }
+      body {
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0f3854;
+        background: radial-gradient(ellipse at center, #0a2e38, #000000 70%);
+      }
+      #clock {
+        font-size: 40px;
+        width: 400px;
+        padding: 30px;
+        text-align: center;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1),
+          0 0 20px rgba(10, 175, 230, 0);
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <span id="hours">12</span>
+      <span>:</span>
+      <span id="minutes">60</span>
+      <span>:</span>
+      <span id="seconds">60</span>
+      <span id="am-pm">AM</span>
+    </div>
+
+    <script>
+      function updateTime() {
+        let dateTime = new Date();
+        let hours = dateTime.getHours();
+        let minutes = dateTime.getMinutes();
+        let seconds = dateTime.getSeconds();
+        let am_pm = document.getElementById("am-pm");
+
+        if (hours >= 12) {
+          am_pm.innerHTML = "PM";
+        } else {
+          am_pm.innerHTML = "AM";
+        }
+
+        if (hours > 12) {
+          hours = hours - 12;
+        }
+
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+      }
+      setInterval(updateTime, 1000);
+    </script>
+
+
+  </body>
+</html>

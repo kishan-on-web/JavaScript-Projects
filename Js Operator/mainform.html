@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        table {
+            border-style: outset;
+            border-width: 4px;
+            width: 35%;
+        }
+        th,td {
+            border: 1px solid black;
+            font-family: sans-serif;
+        }
+        th {
+            background-color: rgb(248, 248, 172);
+            color: rgb(233, 99, 99);
+            height: 30px;
+        }
+        td {
+            padding: 5px 15px;
+            background-color: rgb(142, 219, 243);
+            font-size: 15px;
+        }
+        button {
+            width: 138px;
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">Registration Form</th>
+        </tr>
+        <tr>
+            <td>Enter Name</td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td>Enter Password</td>
+            <td><input type="password" name="pass" id="pass"></td>
+        </tr>
+        <tr>
+            <td>Enter Address</td>
+            <td><textarea name="add" id="add" cols="21" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="reset">Restet</button>
+                <button onclick="display(),display1(),display3()">Submit Form</button>
+            </td>
+        </tr>
+    </table>
+    <p id="printhere"></p>
+    <p id="password"></p>
+    <p id="address"></p>
+
+    <script>
+        function display(){
+            var first = document.getElementById("name").value;
+            document.getElementById("printhere").innerHTML = first;
+        }
+        function display1(){
+            var second = document.getElementById("pass").value;
+            document.getElementById("password").innerHTML = second;
+        }
+        function display3(){
+            var third = document.getElementById("add").value;
+            document.getElementById("address").innerHTML = third;
+        }
+    </script>
+</body>
+</html>

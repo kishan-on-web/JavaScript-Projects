@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS DOM TASK 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+        
+        First Name : <input type="text" id="fname">
+        <br><br>
+        Last Name : <input type="text" id="lname">
+        <br><br>
+
+        <button onclick="display(),display1()">Add Info</button>
+
+        <p id="printhere"></p>
+        <p id="prin"></p>
+
+
+        <script>
+            function display(){
+                var fname = document.getElementById("fname").value;
+                document.getElementById("printhere").innerHTML = fname;
+            }
+            function display1(){
+                var lname = document.getElementById("lname").value;
+                document.getElementById("prin").innerHTML = lname;
+            }
+       </script>
+</body>
+</html>

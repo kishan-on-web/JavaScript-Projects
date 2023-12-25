@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NameTest</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+        
+         Name : <input type="text" id="userName">
+        <br><br>
+         address : <input type="text" id="address">
+
+
+        <button onclick="display()">Add Info</button>
+
+        <p id="printhere"></p>
+        <p id="prin"></p>
+
+
+        <script>
+            function display(){
+                var userName = document.getElementById("userName").value;
+                document.getElementById("printhere").innerHTML = userName;
+            
+           
+                var address = document.getElementById("address").value;
+                document.getElementById("prin").innerHTML = address;
+            }
+       </script>
+</body>
+</html>
+

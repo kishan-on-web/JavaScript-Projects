@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marksheet</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        .main{
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+            height: 180px;
+            border: 1px solid gray;
+        }
+        .A {
+            width: 40%;
+            height: 600px;
+            float: left;
+            margin: 0 0 0 10px;
+        }
+        .B{
+            width: 58%;
+            height: 600px;
+            float: left;
+            margin: 0 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>STUDENT MARKSHEET</h1>
+    </div>
+    <div class="A">
+    <form action="">
+        <table>
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <h1>STUDENT INFORMATION: </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" name="name" id="name" required></td>
+                <td>Roll No. :</td>
+                <td><input type="number" name="number" id="number" required></td>
+            </tr>
+            <tr>
+                <td>Father Name :</td>
+                <td><input type="text" name="fname" id="fname" required></td>
+                <td>Date of Brith :</td>
+                <td><input type="date" name="date" id="date" required></td>
+            </tr>
+            <tr>
+                <td>Exam Month-year :</td>
+                <td><input type="month" name="myear" id="myear" required></td>
+                <td>Seat No. :</td>
+                <td><input type="number" name="seat" id="seat" required></td>
+            </tr>
+        </table>
+    
+        <table style="margin-top: 20px; height: 220px;">
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <h1>STUDENT MARKS: </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>SR. NO.</td>
+                <td>SUBJECT NAME</td>
+                <td>PASSING MARKS</td>
+                <td>MARKS</td>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>A/c</td>
+                <td>100/35</td>
+                <td><input type="number" name="ac-mark" id="ac-mark" required></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>state</td>
+                <td>100/35</td>
+                <td><input type="number" name="state" id="state" required></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>BA</td>
+                <td>100/35</td>
+                <td><input type="number" name="ba" id="ba" required></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>ECO</td>
+                <td>100/35</td>
+                <td><input type="number" name="eco" id="eco" required></td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>ENGLISH</td>
+                <td>100/35</td>
+                <td><input type="number" name="eng" id="eng" required></td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>GUJRATI</td>
+                <td>100/35</td>
+                <td><input type="number" name="guj" id="guj" required></td>
+            </tr>
+        </table>
+        
+        
+        <input type="reset" value="reset" style="margin: 20px;width: 70px; height: 30px;">
+    </form>
+    <input type="submit" id="submit" name="submit" value="submit" style="margin: 20px;width: 70px; height: 30px;" onclick="mark()">
+
+    </div>
+    <div class="B">
+        <table>
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <h1>STUDENT INFORMATION: </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>Name :</td>
+                <td><p id="pname"></p></td>
+                <td>Roll No. :</td>
+                <td><p id="pnumber"></p></td>
+            </tr>
+            <tr>
+                <td>Father Name :</td>
+                <td><p id="pfname"></p></td>
+                <td>Date of Brith :</td>
+                <td><p id="pdate"></p></td>
+            </tr>
+            <tr>
+                <td>Exam Month-year :</td>
+                <td><p id="pmyear"></p></td>
+                <td>Seat No. :</td>
+                <td><p id="pseat"></p></td>
+            </tr>
+        </table>
+
+        <table style="margin-top: 20px; height: 220px;">
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <h1>STUDENT MARKS: </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>SR. NO.</td>
+                <td>SUBJECT NAME</td>
+                <td>PASSING MARKS</td>
+                <td>MARKS</td>
+                <td>Grade</td>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>A/c</td>
+                <td>100/35</td>
+                <td><p id="pac-mark"></p></td>
+                <td><p id="gac"></p></td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>state</td>
+                <td>100/35</td>
+                <td><p id="pstate"></p></td>
+                <td><p id="stategra"></p></td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>BA</td>
+                <td>100/35</td>
+                <td><p id="pba"></p></td>
+                <td><p id="bagra"></p></td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>ECO</td>
+                <td>100/35</td>
+                <td><p id="peco"></p></td>
+                <td><p id="ecogra"></p></td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>ENGLISH</td>
+                <td>100/35</td>
+                <td><p id="peng"></p></td>
+                <td><p id="enggra"></p></td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>GUJRATI</td>
+                <td>100/35</td>
+                <td><p id="pguj"></p></td>
+                <td><p id="gujgra"></p></td>
+            </tr>
+        </table>
+        
+        <table style="margin-top: 20px; height: 120px;">
+            <tr>
+                <td colspan="4">
+                    <h1>RESULT: </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>TOTLE :</td>
+                <td><p id="totle"></p></td>
+                <td>PERCENTAGE :</td>
+                <td><p id="answer"></p></td>
+            </tr>
+            <tr>
+                <td>GRADE :</td>
+                <td><p id="fgrade"></p></td>
+                <td>PASS/FAIL :</td>
+                <td><p id="passorfail"></p></td>
+            </tr>
+        </table>
+    </div>
+  
+    <script>
+        function mark(){
+            var ac, state, ba, eco,eng, guj, sum, divi;
+            ac = parseInt(document.getElementById("ac-mark").value);
+            state = parseInt(document.getElementById("state").value);
+            ba = parseInt(document.getElementById("ba").value);
+            eco = parseInt(document.getElementById("eco").value);
+            eng = parseInt(document.getElementById("eng").value);
+            guj = parseInt(document.getElementById("guj").value);
+
+            sum = ac + state + ba + eco + eng + guj;
+            divi = sum/6;
+
+            document.getElementById("totle").innerHTML = sum;
+            document.getElementById("answer").innerHTML = divi;
+            
+            let grade;
+            if(divi>=90){
+                grade = "A1";
+                document.getElementById("fgrade").innerHTML = grade;
+            }else if(divi>=80 && divi<90){
+                grade ="A";
+                document.getElementById("fgrade").innerHTML = grade;
+            }else if(divi>=70 && divi<=79){
+                grade ="B";
+                document.getElementById("fgrade").innerHTML = grade;
+            }else if(divi>=50 && divi<=69){
+                grade ="C";
+                document.getElementById("fgrade").innerHTML = grade;
+            }else if(divi>=33 && divi<=49){
+                grade ="D";
+                document.getElementById("fgrade").innerHTML = grade;
+            }else{
+                grade ="F";
+                document.getElementById("fgrade").innerHTML = grade;
+            }
+
+            if(ac<33 || ba<33 || state<33 || eco<33 || eng<33 || guj<33){
+                alert('You Failed');
+                grade ="Fail";
+                document.getElementById("passorfail").innerHTML = grade;
+            }else
+            {
+                grade = "Pass"
+                document.getElementById("passorfail").innerHTML = grade;
+            }
+
+            var name = document.getElementById("name").value;
+            document.getElementById("pname").innerHTML = name;
+
+            var number = document.getElementById("number").value;
+            document.getElementById("pnumber").innerHTML = number;
+
+            var fname = document.getElementById("fname").value;
+            document.getElementById("pfname").innerHTML = fname;
+
+            var date = document.getElementById("date").value;
+            document.getElementById("pdate").innerHTML = date;
+
+            var myear = document.getElementById("myear").value;
+            document.getElementById("pmyear").innerHTML = myear;
+
+            var seat = document.getElementById("seat").value;
+            document.getElementById("pseat").innerHTML = seat;
+
+            var ac = document.getElementById("ac-mark").value;
+            document.getElementById("pac-mark").innerHTML = ac;
+
+            
+
+            if(ac>=90){
+                grade = "A1";
+                document.getElementById("gac").innerHTML = grade;
+            }else if(ac>=80 && ac<90){
+                grade ="A";
+                document.getElementById("gac").innerHTML = grade;
+            }else if(ac>=70 && ac<=79){
+                grade ="B";
+                document.getElementById("gac").innerHTML = grade;
+            }else if(ac>=50 && ac<=69){
+                grade ="C";
+                document.getElementById("gac").innerHTML = grade;
+            }else if(ac>=33 && ac<=49){
+                grade ="D";
+                document.getElementById("gac").innerHTML = grade;
+            }else{
+                grade ="F";
+                document.getElementById("gac").innerHTML = grade;
+            }
+
+            var state = document.getElementById("state").value;
+            document.getElementById("pstate").innerHTML = state;
+
+            if(state>=90 ){
+                grade = "A1";
+                document.getElementById("stategra").innerHTML = grade;
+            }else if(state>=80 && state<90){
+                grade ="A";
+                document.getElementById("stategra").innerHTML = grade;
+            }else if(state>=70 && state<=79){
+                grade ="B";
+                document.getElementById("stategra").innerHTML = grade;
+            }else if(state>=50 && state<=69){
+                grade ="C";
+                document.getElementById("stategra").innerHTML = grade;
+            }else if(state>=33 && state<=49){
+                grade ="D";
+                document.getElementById("stategra").innerHTML = grade;
+            }else{
+                grade="F";
+                document.getElementById("stategra").innerHTML = grade;
+            }
+
+            var ba = document.getElementById("ba").value;
+            document.getElementById("pba").innerHTML = ba;
+
+            if(ba>=90 ){
+                grade = "A1";
+                document.getElementById("bagra").innerHTML = grade;
+            }else if(ba>=80 && ba<90){
+                grade ="A";
+                document.getElementById("bagra").innerHTML = grade;
+            }else if(ba>=70 && ba<=79){
+                grade ="B";
+                document.getElementById("bagra").innerHTML = grade;
+            }else if(ba>=50 && ba<=69){
+                grade ="C";
+                document.getElementById("bagra").innerHTML = grade;
+            }else if(ba>=33 && ba<=49){
+                grade ="D";
+                document.getElementById("bagra").innerHTML = grade;
+            }else{
+                grade="F";
+                document.getElementById("bagra").innerHTML = grade;
+            }
+
+            var eco = document.getElementById("eco").value;
+            document.getElementById("peco").innerHTML = eco;
+
+            if(eco>=90 ){
+                grade = "A1";
+                document.getElementById("ecogra").innerHTML = grade;
+            }else if(eco>=80 && eco<90){
+                grade ="A";
+                document.getElementById("ecogra").innerHTML = grade;
+            }else if(eco>=70 && eco<=79){
+                grade ="B";
+                document.getElementById("ecogra").innerHTML = grade;
+            }else if(eco>=50 && eco<=69){
+                grade ="C";
+                document.getElementById("ecogra").innerHTML = grade;
+            }else if(eco>=33 && eco<50){
+                grade ="D";
+                document.getElementById("ecogra").innerHTML = grade;
+            }else{
+                grade="F";
+                document.getElementById("ecogra").innerHTML = grade;
+            }
+
+            var eng = document.getElementById("eng").value;
+            document.getElementById("peng").innerHTML = eng;
+
+            if(eng>=90 ){
+                grade = "A1";
+                document.getElementById("enggra").innerHTML = grade;
+            }else if(eng>=80 && eng<90){
+                grade ="A";
+                document.getElementById("enggra").innerHTML = grade;
+            }else if(eng>=70 && eng<80){
+                grade ="B";
+                document.getElementById("enggra").innerHTML = grade;
+            }else if(eng>=50 && eng<70){
+                grade ="C";
+                document.getElementById("enggra").innerHTML = grade;
+            }else if(eng>=33 && eng<50){
+                grade ="D";
+                document.getElementById("enggra").innerHTML = grade;
+            }else{
+                grade="F";
+                document.getElementById("enggra").innerHTML = grade;
+            }
+
+            var guj = document.getElementById("guj").value;
+            document.getElementById("pguj").innerHTML = guj;
+
+            if(guj>=90 ){
+                grade = "A1";
+                document.getElementById("gujgra").innerHTML = grade;
+            }else if(guj>=80 && guj<90){
+                grade ="A";
+                document.getElementById("gujgra").innerHTML = grade;
+            }else if(guj>=70 && guj<80){
+                grade ="B";
+                document.getElementById("gujgra").innerHTML = grade;
+            }else if(guj>=50 && guj<70){
+                grade ="C";
+                document.getElementById("gujgra").innerHTML = grade;
+            }else if(guj>=33 && guj<50){
+                grade ="D";
+                document.getElementById("gujgra").innerHTML = grade;
+            }else{
+                grade="F";
+                document.getElementById("gujgra").innerHTML = grade;
+            }   
+        }
+
+    </script>
+</body>
+</html>
